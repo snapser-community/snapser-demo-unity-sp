@@ -110,7 +110,7 @@ namespace Snapser.Client
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
-            BasePath = "https://gateway.snapser.com/h3jmi96m";
+            BasePath = "https://gateway.snapser.com/f7auppyi";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -118,7 +118,7 @@ namespace Snapser.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://gateway.snapser.com/h3jmi96m"},
+                        {"url", "https://gateway.snapser.com/f7auppyi"},
                         {"description", "No description provided"},
                     }
                 }
@@ -139,7 +139,7 @@ namespace Snapser.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://gateway.snapser.com/h3jmi96m") : this()
+            string basePath = "https://gateway.snapser.com/f7auppyi") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -175,7 +175,8 @@ namespace Snapser.Client
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath {
+        public virtual string BasePath
+        {
             get { return _basePath; }
             set { _basePath = value; }
         }
@@ -515,7 +516,7 @@ namespace Snapser.Client
         {
             string report = "C# SDK (Snapser) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version + "\n";
             report += "    Version of the API: snapship: v1 SDK\n";
             report += "    SDK Package Version: 1.0.0\n";
 

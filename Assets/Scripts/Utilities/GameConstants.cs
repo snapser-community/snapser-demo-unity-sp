@@ -4,7 +4,7 @@ namespace Utilities
     {
         public static readonly string DefaultPlayerName = "UnityPlayer";
 
-        public static readonly string DefaultClusterURL = "https://gateway.snapser.com/h3jmi96m";
+        public static readonly string DefaultClusterURL = "https://gateway.snapser.com/f7auppyi";
         public static readonly string UId = "UserId";
         public static readonly string UName = "UserName";
         public static readonly string SToken = "SessionToken";

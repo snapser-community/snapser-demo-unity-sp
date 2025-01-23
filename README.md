@@ -21,20 +21,57 @@
 4. Please note that it will take a few minutes to create your snapend.
     ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/creatingsnapendpopup.gif)
 5. Once created, you will see your snapend ready in your dashboard.
-6. From this dashboard, you can manage your snapend, download the sdk for your specific platform, access admin tools to update your snaps specific to your game, access api explorer etc.
+6. Click on the Snapend widget, to go to your home page. **IMPORTANT**: Here copy the **Snapend ID** from the top. You will need that in the Step - `Updating the Snapend ID in the SDK code`.
+7. From this dashboard, you can manage your snapend, download the sdk for your specific platform, access admin tools to update your snaps specific to your game, access api explorer etc.
 
 ## Setup Snapser Snaps
+You can configure your individual snaps from the Admin Tools for your individual snapend.
+![alt_text](https://github.com/snapser-engine/unity-demo-igdc/blob/main/Docs/Images/AdminToolsIntro.png)
 
-1. You can configure your individual snaps from the Admin Tools for your individual snapend.
-    ![alt_text](https://github.com/snapser-engine/unity-demo-igdc/blob/main/Docs/Images/AdminToolsIntro.png)
-2. For this demo, we are going to use anonymous login which is the easiest way to set up authentication for your game. You can choose to have alternate method such as email, facebook, google etc.
-3. Just add an anon connector under ‘Add an connector’’
-    ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/anonconnector.gif)
-4. Similarly, configure profiles, statistics, storage and leaderboards as follows
-    ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/profileconnector.gif)
-    ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/statsconnector.gif)
-    ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/storageconnector.gif)
-    ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/leaderboardconnector.gif)
+### Automated Setup
+You can use Snapser's infrastructure and configuration as code, to directly import a file and create
+a Snapend with the infra and configuration you need for this game.
+
+- This project has a manifest file called `snapser-f7auppyi-manifest.json`
+- This file contains the infra architecture and the configuration data already.
+- Go to your Game home page and click on the **Create Snapend** button. Development or Staging, either is fine.
+- Give your Snapend a name and hit Continue.
+- In the next step, instead of selecting Snaps, click the blue button and select **Import**.
+- Now, select this manifest file and Snapser will automatically load everything in.
+- Keep hitting Continue till you reach the last step and then hit **Snap it**.
+- Your Snapend will be up and ready to be used in this game.
+
+### Manual Setup
+#### Setup Auth
+- For this demo, we are going to use anonymous login which is the easiest way to set up authentication for your game. You can choose to have alternate method such as email, facebook, google etc.
+- Go to the **Snapend Configuration** tool, and select **Auth**
+- Click on the **Connector** tool, and select Anon from the drop down.
+- Hit Save and your Anon login will be active.
+![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/anonconnector.gif)
+
+#### Setup Profile
+- Go to the **Snapend Configuration** tool, and select **Profile**
+- Click on the **Attributes** tool and add a new attribute called **username**.
+- Hit Save.
+![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/profileconnector.gif)
+
+#### Setup Statistics
+- Go to the **Snapend Configuration** tool, and select **Statistics and Segmentation**
+- Click on the **Statistics** tool and add a new stat called **distance_travelled**.
+- Hit Save.
+![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/statsconnector.gif)
+
+#### Setup Storage Blob
+- Go to the **Snapend Configuration** tool, and select **Storage**
+- Click on the **Blobs** tool and add a new blob called **color**.
+- Hit Save.
+![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/storageconnector.gif)
+
+#### Setup Leaderboard
+- Go to the **Snapend Configuration** tool, and select **Leaderboards**
+- Click on the **Leaderboards** tool and add a new leaderboard called **max_distance**.
+- Hit Save.
+![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/leaderboardconnector.gif)
 
 ## Download Project
 
@@ -55,6 +92,17 @@
     ![alt_text](https://github.com/snapser-community/snapser-demo-unity-sp/blob/main/Docs/Gifs/adddependenciesnuget.gif)
 4. Download your Snapser SDK from the Snapser Portal. Move the downloaded SDK into the **Assets/Packages** folder.
 5. That’s it! You can use the Snapser SDK to make calls to your snaps. Under {Snapser SDK}/SDK/Snapser/Api, You should have a class for each of your snaps.
+
+## Updating the Snapend ID in the SDK code
+**IMPORTANT**: This project already has a SDK added for your convenience. You can either replace
+the code by downloading the SDK from the Snapend you just spun up. Or then just do a global search
+for the following line and replace `f7auppyi` with your Snapend Id.
+```
+https://gateway.snapser.com/f7auppyi
+```
+There should be two files where you need to swap the value
+- Configuration.cs
+- GameConstants.cs
 
 ## Usage
 
